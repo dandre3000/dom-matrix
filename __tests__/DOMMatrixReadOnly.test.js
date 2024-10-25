@@ -85,7 +85,7 @@ test('flip y-axis and return a DOMMatrix', () => {
 	expect(a.flipY()).toStrictEqual(new DOMMatrix([1, 2, 3, 4, -5, -6, -7, -8, 9, 10, 11, 12, 13, 14, 15, 16]))
 })
 
-test('multiply throws Error if other is not a DOMMatrixReadOnly', () => {
+test('throws Error if other is not a DOMMatrixReadOnly', () => {
 	const a = new DOMMatrixReadOnly
 	
 	expect(() => a.multiply()).toThrow(Error)
@@ -97,4 +97,26 @@ test('multiply a times b and return a DOMMatrix', () => {
 	const b = new DOMMatrixReadOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
 	
 	expect(a.multiply(b)).toStrictEqual(new DOMMatrix([90, 100, 110, 120, 202, 228, 254, 280, 314, 356, 398, 440, 426, 484, 542, 600]))
+})
+
+test('convert to a Float32Array', () => {
+	const a = new DOMMatrixReadOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+	
+	expect(a.toFloat32Array()).toStrictEqual(new Float32Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]))
+})
+
+test('convert to a Float64Array', () => {
+	const a = new DOMMatrixReadOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+	
+	expect(a.toFloat64Array()).toStrictEqual(new Float64Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]))
+})
+
+test('convert to a string', () => {
+	const a = new DOMMatrixReadOnly()
+	const b = new DOMMatrixReadOnly([1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1])
+	const c = new DOMMatrixReadOnly([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])
+	
+	expect(a.toString()).toBe('matrix(1, 0, 0, 1, 0, 0)')
+	expect(b.toString()).toBe('matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)')
+	expect(c.toString()).toBe('matrix3d(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16)')
 })

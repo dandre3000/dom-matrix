@@ -44,7 +44,9 @@ declare module 'dom-matrix' {
 		flipX(): IDOMMatrix
 		flipY(): IDOMMatrix
 		multiply(other: IDOMMatrixReadOnly): IDOMMatrix
+		toFloat32Array(): Float32Array
 		toFloat64Array(): Float64Array
+		toString(): string
 	}
 	
 	export interface IDOMMatrix extends IDOMMatrixReadOnly {

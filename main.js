@@ -145,7 +145,7 @@ export class DOMMatrixReadOnly {
 	}
 	
 	/**
-	 * @return {boolean}
+	 * 
 	 */
 	[setIsIdentitySymbol]() {
 		if (this[dataSymbol][0] === 1 &&
@@ -226,10 +226,43 @@ export class DOMMatrixReadOnly {
 	}
 	
 	/**
+	 * @return {Float32Array}
+	 */
+	toFloat32Array() {
+		return new Float32Array(this[dataSymbol])
+	}
+	
+	/**
 	 * @return {Float64Array}
 	 */
 	toFloat64Array() {
 		return new Float64Array(this[dataSymbol])
+	}
+	
+	/**
+	 * @return {string}
+	 */
+	toString() {
+		let string = ''
+		
+		if (this.is2D === true) {
+			string += 'matrix('
+			
+			for (let i = 0; i < _2DKeys.length - 1; i++) {
+				string += `${this[dataSymbol][_2DKeys[i]]}, `
+			}
+			
+			string += `${this[dataSymbol][13]})`
+		} else {
+			string += 'matrix3d('
+			
+			for (let i = 0; i < 16; i++) {
+				if (i === 15) string += `${this[dataSymbol][15]})`
+				else string += `${this[dataSymbol][i]}, `
+			}
+		}
+		
+		return string
 	}
 }
 
