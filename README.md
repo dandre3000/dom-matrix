@@ -1,8 +1,8 @@
 # dom-matrix
-DOMMatrix & DOMMatrixReadOnly polyfill
+DOMMatrix & DOMMatrixReadOnly web API polyfills that fit the [specifications](https://drafts.fxtf.org/geometry/#DOMMatrix).
 
 ## License
-@dandre3000/dommatrix is published under the GNU General Public License 3.0:
+@dandre3000/dom-matrix is published under the GNU General Public License 3.0:
 
 ```
 Copyright (c) 2024 DeAundre Payne
