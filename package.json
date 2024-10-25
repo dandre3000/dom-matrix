@@ -10,10 +10,13 @@
   },
   "description": "DOMMatrix & DOMMatrixReadOnly polyfill",
   "keywords": [
-    "data",
-    "data-structure",
-    "dom",
-    "dommatrix",
+    "3D",
+    "DOM",
+    "DOMMatrix",
+    "DOMMatrixReadOnly",
+    "geometry",
+    "matrix",
+    "matrix transformations",
     "polyfill"
   ],
   "homepage": "https://github.com/dandre3000/dom-matrix#readme",
