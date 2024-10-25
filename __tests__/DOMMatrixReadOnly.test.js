@@ -9,7 +9,7 @@ test('Throw Error if init is defined but not a DOMMatrixReadOnly or an ArrayLike
 	expect(() => new DOMMatrixReadOnly({})).toThrow(Error)
 })
 
-test('DOMMatrixReadOnly instance fits the standard and is read only', () => {
+test('DOMMatrixReadOnly instance fits the specifications', () => {
 	const checkDOMMatrix = matrix => {
 		if ((typeof matrix.is2D !== 'boolean') ||
 			(typeof matrix.isIdentity !== 'boolean')) { console.log(matrix); return false }
