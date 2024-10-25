@@ -1,0 +1,48 @@
+{
+  "name": "@dandre3000/dom-matrix",
+  "version": "0.1.0-alpha",
+  "license": "GPL-3.0",
+  "author": "DeAundre Payne <deaundre.payne@gmail.com> (https://github.com/dandre3000)",
+  "contributors": [],
+  "funding": {
+    "type": "Cash App",
+    "url": "https://cash.app/$DeAundrePayne"
+  },
+  "description": "DOMMatrix & DOMMatrixReadOnly polyfill",
+  "keywords": [
+    "data",
+    "data-structure",
+    "dom",
+    "dommatrix",
+    "polyfill"
+  ],
+  "homepage": "https://github.com/dandre3000/dom-matrix#readme",
+  "repository": {
+    "url": "git+https://github.com/dandre3000/dom-matrix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dandre3000/dom-matrix/issues",
+    "email": "deaundre.payne@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "files": [],
+  "exports": {},
+  "main": "main.min.js",
+  "browser": {},
+  "scripts": {
+    "minimize": "npx terser main.js -c -m -o main.min.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles --watchAll",
+    "type-check": "npx tsc --watch"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "terser": "^5.36.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.17.0"
+  }
+}
